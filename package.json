@@ -1,0 +1,23 @@
+{
+  "name": "react-hooks-logger",
+  "version": "0.0.0",
+  "description": "Logger for React Hooks",
+  "main": "./dist/index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ilyalesik/react-hooks-logger.git"
+  },
+  "keywords": [
+    "react",
+    "hooks",
+    "logger"
+  ],
+  "author": "Ilya Lesik <ilialesik@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ilyalesik/react-hooks-logger/issues"
+  },
+  "homepage": "https://github.com/ilyalesik/react-hooks-logger#readme"
+}
