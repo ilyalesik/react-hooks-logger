@@ -3,7 +3,20 @@
   "version": "0.0.0",
   "description": "Logger for React Hooks",
   "main": "./dist/index.js",
-  "scripts": {},
+  "scripts": {
+    "flow": "flow",
+    "flow:check": "flow check",
+    "test": "jest",
+    "prettier": "prettier \"*/**/*.js\" --ignore-path ./.prettierignore --write && git add . && git status"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "pre-commit": [
+    "prettier",
+    "flow:check"
+  ],
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/ilyalesik/react-hooks-logger.git"
@@ -27,8 +40,11 @@
     "@babel/core": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
     "babel-test": "^0.1.2",
+    "flow-bin": "^0.94.0",
     "jest": "^24.1.0",
-    "jest-file-snapshot": "^0.3.2"
+    "jest-file-snapshot": "^0.3.2",
+    "pre-commit": "^1.2.2",
+    "prettier": "^1.16.4"
   },
   "peerDependencies": {
     "react": ">=16.8.0"
