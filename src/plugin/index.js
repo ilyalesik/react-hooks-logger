@@ -10,11 +10,11 @@ export default declare((api, options, dirname) => {
     let directiveFound = false;
 
     return {
-        name: "babel-plugin-react-overrides",
+        name: "react-hooks-logger",
         inherits: syntaxJSX,
 
         visitor: {
-            Program: path => {
+            Program: (path, state) => {
                 const comments = path.container.comments;
 
                 if (comments) {
@@ -29,10 +29,12 @@ export default declare((api, options, dirname) => {
                     return;
                 }
 
+                const packageName = (state && state.opts && state.opts.packageName) || "react-hooks-logger";
+
                 const body = path.node.body;
                 const importDeclaration = t.importDeclaration(
                     [t.importSpecifier(t.identifier("useLoggedState"), t.identifier("useLoggedState"))],
-                    t.stringLiteral("react-hooks-logger")
+                    t.stringLiteral(packageName)
                 );
                 body.unshift(importDeclaration);
             },
